@@ -73,7 +73,7 @@ class App extends Component{
                     <ol>{list}</ol>
                 </div>
             </div>
-        );
+        ); 
     }
 }
 
