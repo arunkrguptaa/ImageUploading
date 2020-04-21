@@ -1,0 +1,528 @@
+Started by user Nishant Chauhan
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/AWS-Staging-Backend
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Preparation)
+[Pipeline] checkout
+using credential SanjeevBitbucketAccount
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://sanjeevkmaurya@bitbucket.org/wittybrightlink/sidewinder-rest-services.git # timeout=10
+Fetching upstream changes from https://sanjeevkmaurya@bitbucket.org/wittybrightlink/sidewinder-rest-services.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials Sanjeev Credentials
+ > git fetch --tags --progress https://sanjeevkmaurya@bitbucket.org/wittybrightlink/sidewinder-rest-services.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/staging^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/staging^{commit} # timeout=10
+Checking out Revision 6d8303515bac8ff537b6d265024b48252f69e975 (refs/remotes/origin/staging)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 6d8303515bac8ff537b6d265024b48252f69e975
+Commit message: "Changes for handling BCC emails not sending due to null emails"
+ > git rev-list --no-walk 22ad1314b059eab96132f4094bc84232cf239920 # timeout=10
+[Pipeline] tool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] isUnix
+[Pipeline] sh
++ /usr/share/maven/bin/mvn -Dmaven.test.failure.ignore clean package
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Sidewinder 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.6.1:clean (default-clean) @ sidewinder ---
+[INFO] Deleting /var/lib/jenkins/workspace/AWS-Staging-Backend/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ sidewinder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] Copying 182 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ sidewinder ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 455 source files to /var/lib/jenkins/workspace/AWS-Staging-Backend/target/classes
+[WARNING] /var/lib/jenkins/workspace/AWS-Staging-Backend/src/main/java/com/brightlink/sidewinder/dto/NumberCheckDTO.java: Some input files use or override a deprecated API.
+[WARNING] /var/lib/jenkins/workspace/AWS-Staging-Backend/src/main/java/com/brightlink/sidewinder/dto/NumberCheckDTO.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /var/lib/jenkins/workspace/AWS-Staging-Backend/src/main/java/com/brightlink/sidewinder/service/CustomerService.java: Some input files use unchecked or unsafe operations.
+[WARNING] /var/lib/jenkins/workspace/AWS-Staging-Backend/src/main/java/com/brightlink/sidewinder/service/CustomerService.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ sidewinder ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/AWS-Staging-Backend/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ sidewinder ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /var/lib/jenkins/workspace/AWS-Staging-Backend/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ sidewinder ---
+[INFO] Surefire report directory: /var/lib/jenkins/workspace/AWS-Staging-Backend/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+13:42:01.044 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.brightlink.sidewinder.SidewinderApplicationTests]
+13:42:01.049 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+13:42:01.056 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+13:42:01.070 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.brightlink.sidewinder.SidewinderApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+13:42:01.080 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.brightlink.sidewinder.SidewinderApplicationTests], using SpringBootContextLoader
+13:42:01.083 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.brightlink.sidewinder.SidewinderApplicationTests]: class path resource [com/brightlink/sidewinder/SidewinderApplicationTests-context.xml] does not exist
+13:42:01.083 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.brightlink.sidewinder.SidewinderApplicationTests]: class path resource [com/brightlink/sidewinder/SidewinderApplicationTestsContext.groovy] does not exist
+13:42:01.083 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.brightlink.sidewinder.SidewinderApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+13:42:01.084 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.brightlink.sidewinder.SidewinderApplicationTests]: SidewinderApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:42:01.113 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.brightlink.sidewinder.SidewinderApplicationTests]
+13:42:01.120 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+13:42:01.121 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+13:42:01.121 [main] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+13:42:01.130 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved classpath location [com/brightlink/sidewinder/] to resources [URL [file:/var/lib/jenkins/workspace/AWS-Staging-Backend/target/test-classes/com/brightlink/sidewinder/], URL [file:/var/lib/jenkins/workspace/AWS-Staging-Backend/target/classes/com/brightlink/sidewinder/]]
+13:42:01.130 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/var/lib/jenkins/workspace/AWS-Staging-Backend/target/test-classes/com/brightlink/sidewinder]
+13:42:01.130 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [/var/lib/jenkins/workspace/AWS-Staging-Backend/target/test-classes/com/brightlink/sidewinder] for files matching pattern [/var/lib/jenkins/workspace/AWS-Staging-Backend/target/test-classes/com/brightlink/sidewinder/*.class]
+13:42:01.133 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/var/lib/jenkins/workspace/AWS-Staging-Backend/target/classes/com/brightlink/sidewinder]
+13:42:01.133 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [/var/lib/jenkins/workspace/AWS-Staging-Backend/target/classes/com/brightlink/sidewinder] for files matching pattern [/var/lib/jenkins/workspace/AWS-Staging-Backend/target/classes/com/brightlink/sidewinder/*.class]
+13:42:01.135 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:com/brightlink/sidewinder/*.class] to resources [file [/var/lib/jenkins/workspace/AWS-Staging-Backend/target/test-classes/com/brightlink/sidewinder/SidewinderApplicationTests.class], file [/var/lib/jenkins/workspace/AWS-Staging-Backend/target/classes/com/brightlink/sidewinder/SidewinderApplication.class]]
+13:42:01.181 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/var/lib/jenkins/workspace/AWS-Staging-Backend/target/classes/com/brightlink/sidewinder/SidewinderApplication.class]
+13:42:01.183 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.brightlink.sidewinder.SidewinderApplication for test class com.brightlink.sidewinder.SidewinderApplicationTests
+13:42:01.186 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.brightlink.sidewinder.SidewinderApplicationTests]: using defaults.
+13:42:01.189 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+13:42:01.207 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4f9a3314, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3b2c72c2, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@491666ad, org.springframework.test.context.support.DirtiesContextTestExecutionListener@176d53b2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@971d0d8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@51931956, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2b4a2ec7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@564718df, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@51b7e5df, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@18a70f16, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@62e136d3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@c8e4bb0]
+13:42:01.209 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.brightlink.sidewinder.SidewinderApplicationTests]
+13:42:01.209 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.brightlink.sidewinder.SidewinderApplicationTests]
+Running com.brightlink.sidewinder.SidewinderApplicationTests
+13:42:01.211 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.brightlink.sidewinder.SidewinderApplicationTests]
+13:42:01.212 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+13:42:01.212 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+13:42:01.212 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.brightlink.sidewinder.SidewinderApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+13:42:01.213 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.brightlink.sidewinder.SidewinderApplicationTests], using SpringBootContextLoader
+13:42:01.213 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.brightlink.sidewinder.SidewinderApplicationTests]: class path resource [com/brightlink/sidewinder/SidewinderApplicationTests-context.xml] does not exist
+13:42:01.214 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.brightlink.sidewinder.SidewinderApplicationTests]: class path resource [com/brightlink/sidewinder/SidewinderApplicationTestsContext.groovy] does not exist
+13:42:01.214 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.brightlink.sidewinder.SidewinderApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+13:42:01.214 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.brightlink.sidewinder.SidewinderApplicationTests]: SidewinderApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:42:01.218 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.brightlink.sidewinder.SidewinderApplicationTests]
+13:42:01.219 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+13:42:01.219 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+13:42:01.219 [main] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+13:42:01.219 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.brightlink.sidewinder.SidewinderApplication for test class com.brightlink.sidewinder.SidewinderApplicationTests
+13:42:01.222 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.brightlink.sidewinder.SidewinderApplicationTests]: using defaults.
+13:42:01.226 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+13:42:01.230 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2d9d4f9d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4034c28c, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@e50a6f6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@14ec4505, org.springframework.test.context.transaction.TransactionalTestExecutionListener@53ca01a2, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@358c99f5, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3ee0fea4, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@48524010, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4b168fa9, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1a84f40f, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@23282c25, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7920ba90]
+13:42:01.231 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.brightlink.sidewinder.SidewinderApplicationTests]
+13:42:01.231 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.brightlink.sidewinder.SidewinderApplicationTests]
+13:42:01.232 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.brightlink.sidewinder.SidewinderApplicationTests]
+13:42:01.232 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.brightlink.sidewinder.SidewinderApplicationTests]
+13:42:01.236 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@5c1a8622 testClass = SidewinderApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@5ad851c9 testClass = SidewinderApplicationTests, locations = '{}', classes = '{class com.brightlink.sidewinder.SidewinderApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@2a17b7b6, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@76707e36, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2d8f65a4], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null].
+13:42:01.237 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.brightlink.sidewinder.SidewinderApplicationTests]
+13:42:01.237 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.brightlink.sidewinder.SidewinderApplicationTests]
+13:42:01.287 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+13:42:01.287 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+13:42:01.287 [main] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+13:42:01.288 [main] DEBUG org.springframework.core.env.MutablePropertySources - Adding [inline] PropertySource with highest search precedence
+13:42:01.292 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+13:42:01.293 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [Inlined Test Properties] PropertySource with highest search precedence
+     _______. __   _______   _______ ____    __    ____  __  .__   __.  _______   _______ .______      
+    /       ||  | |       \ |   ____|\   \  /  \  /   / |  | |  \ |  | |       \ |   ____||   _  \     
+   |   (----`|  | |  .--.  ||  |__    \   \/    \/   /  |  | |   \|  | |  .--.  ||  |__   |  |_)  |    
+    \   \    |  | |  |  |  ||   __|    \            /   |  | |  . `  | |  |  |  ||   __|  |      /     
+.----)   |   |  | |  '--'  ||  |____    \    /\    /    |  | |  |\   | |  '--'  ||  |____ |  |\  \----.
+|_______/    |__| |_______/ |_______|    \__/  \__/     |__| |__| \__| |_______/ |_______|| _| `._____|
+                                                                                                       
+
+13:42:01.885 [main] [UserId: ] INFO 
+				o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@54c5a2ff: startup date [Wed Apr 15 13:42:01 EDT 2020]; root of context hierarchy
+13:42:02.124 [background-preinit] [UserId: ] INFO 
+				o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.4.Final
+13:42:03.229 [main] [UserId: ] INFO 
+				o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'tokenStore' with a different definition: replacing [Generic bean: class [com.brightlink.sidewinder.config.TokenStore]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/var/lib/jenkins/workspace/AWS-Staging-Backend/target/classes/com/brightlink/sidewinder/config/TokenStore.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=initialBeanConfig; factoryMethodName=tokenStore; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/brightlink/sidewinder/config/InitialBeanConfig.class]]
+13:42:03.233 [main] [UserId: ] INFO 
+				o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'validator' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=databaseConfig; factoryMethodName=validator; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/brightlink/sidewinder/config/DatabaseConfig.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=SMSCATLDatabaseConfig; factoryMethodName=validator; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/brightlink/sidewinder/config/SMSCATLDatabaseConfig.class]]
+13:42:03.233 [main] [UserId: ] INFO 
+				o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'jpaVendorAdapter' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=true; factoryBeanName=databaseConfig; factoryMethodName=jpaVendorAdapter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/brightlink/sidewinder/config/DatabaseConfig.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=SMSCATLDatabaseConfig; factoryMethodName=jpaVendorAdapter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/brightlink/sidewinder/config/SMSCATLDatabaseConfig.class]]
+13:42:03.240 [main] [UserId: ] INFO 
+				o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'validator' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=SMSCATLDatabaseConfig; factoryMethodName=validator; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/brightlink/sidewinder/config/SMSCATLDatabaseConfig.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=SMSCDENDatabaseConfig; factoryMethodName=validator; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/brightlink/sidewinder/config/SMSCDENDatabaseConfig.class]]
+13:42:03.241 [main] [UserId: ] INFO 
+				o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'jpaVendorAdapter' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=SMSCATLDatabaseConfig; factoryMethodName=jpaVendorAdapter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/brightlink/sidewinder/config/SMSCATLDatabaseConfig.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=SMSCDENDatabaseConfig; factoryMethodName=jpaVendorAdapter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/brightlink/sidewinder/config/SMSCDENDatabaseConfig.class]]
+13:42:03.254 [main] [UserId: ] INFO 
+				o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'multipartConfigElement' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=initialBeanConfig; factoryMethodName=multipartConfigElement; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/brightlink/sidewinder/config/InitialBeanConfig.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=webConfig; factoryMethodName=multipartConfigElement; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/brightlink/sidewinder/config/WebConfig.class]]
+13:42:03.535 [main] [UserId: ] WARN 
+				o.s.c.a.ConfigurationClassPostProcessor - Cannot enhance @Configuration bean definition 'org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration$TokenKeyEndpointRegistrar' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+13:42:04.072 [main] [UserId: ] INFO 
+				o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration' of type [class org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:42:04.104 [main] [UserId: ] INFO 
+				o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'propConfig' of type [class com.brightlink.sidewinder.config.PropConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:42:04.108 [main] [UserId: ] INFO 
+				o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'SMSCDENDatabaseConfig' of type [class com.brightlink.sidewinder.config.SMSCDENDatabaseConfig$$EnhancerBySpringCGLIB$$319a394a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:42:04.173 [main] [UserId: ] INFO 
+				o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'validator' of type [class org.springframework.validation.beanvalidation.LocalValidatorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:42:04.195 [main] [UserId: ] INFO 
+				o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$6e629ffb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:42:04.229 [main] [UserId: ] INFO 
+				o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+13:42:04.267 [main] [UserId: ] INFO 
+				o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [class org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$6278a336] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:42:04.277 [main] [UserId: ] INFO 
+				o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [class org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:42:04.281 [main] [UserId: ] INFO 
+				o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@59b32539' of type [class org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:42:04.286 [main] [UserId: ] INFO 
+				o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [class org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$874d45e8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:42:04.295 [main] [UserId: ] INFO 
+				o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [class org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:42:04.308 [main] [UserId: ] INFO 
+				o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c9cadafc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:42:04.426 [main] [UserId: ] INFO 
+				o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration' of type [class org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration$$EnhancerBySpringCGLIB$$f4447266] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:42:04.433 [main] [UserId: ] INFO 
+				o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'stringOrNumberMigrationVersionConverter' of type [class org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration$StringOrNumberToMigrationVersionConverter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:42:04.442 [main] [UserId: ] INFO 
+				o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'security.oauth2.client-org.springframework.boot.autoconfigure.security.oauth2.OAuth2ClientProperties' of type [class org.springframework.boot.autoconfigure.security.oauth2.OAuth2ClientProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:42:04.445 [main] [UserId: ] INFO 
+				o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.security.oauth2.OAuth2AutoConfiguration' of type [class org.springframework.boot.autoconfigure.security.oauth2.OAuth2AutoConfiguration$$EnhancerBySpringCGLIB$$811496fc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:42:04.477 [main] [UserId: ] INFO 
+				o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'resourceServerProperties' of type [class org.springframework.boot.autoconfigure.security.oauth2.resource.ResourceServerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:42:04.526 [main] [UserId: ] INFO 
+				com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Started.
+13:42:04.626 [main] [UserId: ] INFO 
+				com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc.PgConnection.getNetworkTimeout() is not yet implemented.)
+dataSource HikariDataSource (HikariPool-1)
+dataSource com.zaxxer.hikari.HikariDataSource
+13:42:04.747 [main] [UserId: ] INFO 
+				o.f.c.internal.util.VersionPrinter - Flyway 3.2.1 by Boxfuse
+13:42:04.783 [main] [UserId: ] INFO 
+				o.f.c.i.dbsupport.DbSupportFactory - Database: jdbc:postgresql://204.124.15.238:5432/sidewinder1504 (PostgreSQL 11.5)
+13:42:04.901 [main] [UserId: ] INFO 
+				o.f.core.internal.command.DbValidate - Validated 155 migrations (execution time 00:00.075s)
+13:42:04.906 [main] [UserId: ] WARN 
+				o.s.w.c.s.GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.api.FlywayException: Validate failed. Migration Checksum mismatch for migration 142
+-> Applied to database : 654858304
+-> Resolved locally    : 576240863
+13:42:04.906 [main] [UserId: ] INFO 
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Close initiated...
+13:42:04.913 [main] [UserId: ] INFO 
+				com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Closed.
+13:42:04.918 [main] [UserId: ] WARN 
+				o.s.boot.SpringApplication - Error handling failed (Error creating bean with name 'delegatingApplicationListener' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available)
+13:42:04.923 [main] [UserId: ] ERROR
+				o.s.boot.SpringApplication - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.api.FlywayException: Validate failed. Migration Checksum mismatch for migration 142
+-> Applied to database : 654858304
+-> Resolved locally    : 576240863
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:296)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1081)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:856)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.flywaydb.core.api.FlywayException: Validate failed. Migration Checksum mismatch for migration 142
+-> Applied to database : 654858304
+-> Resolved locally    : 576240863
+	at org.flywaydb.core.Flyway.doValidate(Flyway.java:1108)
+	at org.flywaydb.core.Flyway.access$300(Flyway.java:62)
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1012)
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1006)
+	at org.flywaydb.core.Flyway.execute(Flyway.java:1418)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:1006)
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 43 common frames omitted
+13:42:04.925 [main] [UserId: ] ERROR
+				o.s.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@2d9d4f9d] to prepare test instance [com.brightlink.sidewinder.SidewinderApplicationTests@71e7adbb]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.api.FlywayException: Validate failed. Migration Checksum mismatch for migration 142
+-> Applied to database : 654858304
+-> Resolved locally    : 576240863
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:296)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1081)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:856)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 26 common frames omitted
+Caused by: org.flywaydb.core.api.FlywayException: Validate failed. Migration Checksum mismatch for migration 142
+-> Applied to database : 654858304
+-> Resolved locally    : 576240863
+	at org.flywaydb.core.Flyway.doValidate(Flyway.java:1108)
+	at org.flywaydb.core.Flyway.access$300(Flyway.java:62)
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1012)
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1006)
+	at org.flywaydb.core.Flyway.execute(Flyway.java:1418)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:1006)
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 43 common frames omitted
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.73 sec <<< FAILURE! - in com.brightlink.sidewinder.SidewinderApplicationTests
+contextLoads(com.brightlink.sidewinder.SidewinderApplicationTests)  Time elapsed: 0.016 sec  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.api.FlywayException: Validate failed. Migration Checksum mismatch for migration 142
+-> Applied to database : 654858304
+-> Resolved locally    : 576240863
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:296)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1081)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:856)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.flywaydb.core.api.FlywayException: Validate failed. Migration Checksum mismatch for migration 142
+-> Applied to database : 654858304
+-> Resolved locally    : 576240863
+	at org.flywaydb.core.Flyway.doValidate(Flyway.java:1108)
+	at org.flywaydb.core.Flyway.access$300(Flyway.java:62)
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1012)
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1006)
+	at org.flywaydb.core.Flyway.execute(Flyway.java:1418)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:1006)
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:296)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1081)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:856)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+
+Results :
+
+Tests in error: 
+  SidewinderApplicationTests.contextLoads » IllegalState Failed to load Applicat...
+
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+
+[ERROR] There are test failures.
+
+Please refer to /var/lib/jenkins/workspace/AWS-Staging-Backend/target/surefire-reports for the individual test results.
+[INFO] 
+[INFO] --- maven-war-plugin:2.6:war (default-war) @ sidewinder ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [sidewinder] in [/var/lib/jenkins/workspace/AWS-Staging-Backend/target/brightlink]
+[INFO] Processing war project
+[INFO] Webapp assembled in [273 msecs]
+[INFO] Building war: /var/lib/jenkins/workspace/AWS-Staging-Backend/target/brightlink.war
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.5.1.RELEASE:repackage (default) @ sidewinder ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 24.147s
+[INFO] Finished at: Wed Apr 15 13:42:09 EDT 2020
+[INFO] Final Memory: 73M/1422M
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Results)
+[Pipeline] junit
+Recording test results
+[Pipeline] archive
+The archive step is deprecated, please use archiveArtifacts instead.
+No files found to archive for pattern "target/*.jar"; continuing.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Create backup of current version)
+[Pipeline] sh
++ ssh centos@ec2-3-224-97-130.compute-1.amazonaws.com 'zip "/home/centos/backup/backend/brightlink-$(date +"%Y-%m-%d-%H-%M-%S").zip" . -i ~/opt/tomcat/webapps/brightlink.war'
+	zip warning: zip file empty
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy Temp Location)
+[Pipeline] sh
++ scp /var/lib/jenkins/workspace/AWS-Staging-Backend/target/brightlink.war centos@ec2-3-224-97-130.compute-1.amazonaws.com:/home/centos/temp_location/
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy)
+[Pipeline] sh
++ ssh centos@ec2-3-224-97-130.compute-1.amazonaws.com 'cp ~/temp_location/brightlink.war /opt/tomcat/webapps/'
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: UNSTABLE
