@@ -1,1 +1,655 @@
-This Is new file..!!
+Started by user Nishant Chauhan
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/UAT-Frontend
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (checkout)
+[Pipeline] checkout
+using credential SanjeevBitbucketAccount
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://sanjeevkmaurya@bitbucket.org/wittybrightlink/sidewinder-web.git # timeout=10
+Fetching upstream changes from https://sanjeevkmaurya@bitbucket.org/wittybrightlink/sidewinder-web.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials Sanjeev Credentials
+ > git fetch --tags --progress https://sanjeevkmaurya@bitbucket.org/wittybrightlink/sidewinder-web.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/develop^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/develop^{commit} # timeout=10
+Checking out Revision 9ac397df61d07bba414c7ac75a677eefce8e7f10 (refs/remotes/origin/develop)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 9ac397df61d07bba414c7ac75a677eefce8e7f10
+Commit message: "cpaas-164"
+ > git rev-list --no-walk 0f9c4dd20633f8356c65474dd423194802ccfa26 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (install modules)
+[Pipeline] sh
++ npm install --verbose -d
+npm info it worked if it ends with ok
+npm info using npm@6.9.0
+npm info using node@v10.16.1
+npm info lifecycle sidewinder@0.0.0~preinstall: sidewinder@0.0.0
+npm timing stage:loadCurrentTree Completed in 1790ms
+npm timing stage:loadIdealTree:cloneCurrentTree Completed in 16ms
+npm timing stage:loadIdealTree:loadShrinkwrap Completed in 965ms
+npm http fetch GET 304 https://registry.npmjs.org/ngx-pagination 165ms (from cache)
+npm timing stage:loadIdealTree:loadAllDepsIntoIdealTree Completed in 1181ms
+npm timing stage:loadIdealTree Completed in 2589ms
+npm timing stage:generateActionsToTake Completed in 89ms
+npm timing action:extract Completed in 209ms
+npm info lifecycle classlist.js@1.1.20150312~preuninstall: classlist.js@1.1.20150312
+npm info lifecycle classlist.js@1.1.20150312~uninstall: classlist.js@1.1.20150312
+npm info lifecycle classlist.js@1.1.20150312~postuninstall: classlist.js@1.1.20150312
+npm timing action:unbuild Completed in 2ms
+npm timing action:remove Completed in 21ms
+npm timing action:finalize Completed in 64ms
+npm timing action:refresh-package-json Completed in 84ms
+npm timing action:preinstall Completed in 1ms
+npm timing action:build Completed in 1ms
+npm timing action:install Completed in 1ms
+npm timing action:postinstall Completed in 0ms
+npm timing stage:executeActions Completed in 399ms
+npm timing stage:rollbackFailedOptional Completed in 52ms
+npm info linkStuff sidewinder@0.0.0
+npm info lifecycle sidewinder@0.0.0~install: sidewinder@0.0.0
+npm info lifecycle sidewinder@0.0.0~postinstall: sidewinder@0.0.0
+npm info lifecycle sidewinder@0.0.0~prepublish: sidewinder@0.0.0
+npm info lifecycle sidewinder@0.0.0~prepare: sidewinder@0.0.0
+npm timing stage:runTopLevelLifecycles Completed in 5380ms
+npm info lifecycle undefined~preshrinkwrap: undefined
+npm info lifecycle undefined~shrinkwrap: undefined
+npm timing audit submit Completed in 1192ms
+npm http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/audits/quick 1216ms
+npm timing audit body Completed in 31ms
+npm info lifecycle undefined~postshrinkwrap: undefined
+npm WARN angular5-csv@0.2.11 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular5-csv@0.2.11 requires a peer of @angular/http@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular5-csv@0.2.11 requires a peer of rxjs@^5.5.2 but none is installed. You must install peer dependencies yourself.
+npm WARN ng-multiselect-dropdown@0.2.3 requires a peer of @angular/common@^4.0.0 || ^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN ng-multiselect-dropdown@0.2.3 requires a peer of @angular/core@^4.0.0 || ^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN ng6-toastr-notifications@1.0.4 requires a peer of @angular/common@^6.0.0-rc.0 || ^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN ng6-toastr-notifications@1.0.4 requires a peer of @angular/core@^6.0.0-rc.0 || ^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.4 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.4: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+removed 1 package and audited 40308 packages in 6.156s
+found 2309 vulnerabilities (1683 low, 11 moderate, 613 high, 2 critical)
+  run `npm audit fix` to fix them, or `npm audit` for details
+npm timing npm Completed in 6418ms
+npm info ok 
++ npm install --save classlist.js
+npm WARN angular5-csv@0.2.11 requires a peer of @angular/core@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular5-csv@0.2.11 requires a peer of @angular/http@^5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular5-csv@0.2.11 requires a peer of rxjs@^5.5.2 but none is installed. You must install peer dependencies yourself.
+npm WARN ng-multiselect-dropdown@0.2.3 requires a peer of @angular/common@^4.0.0 || ^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN ng-multiselect-dropdown@0.2.3 requires a peer of @angular/core@^4.0.0 || ^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN ng6-toastr-notifications@1.0.4 requires a peer of @angular/common@^6.0.0-rc.0 || ^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN ng6-toastr-notifications@1.0.4 requires a peer of @angular/core@^6.0.0-rc.0 || ^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.4 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.4: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
++ classlist.js@1.1.20150312
+added 1 package and audited 40309 packages in 7.08s
+found 2309 vulnerabilities (1683 low, 11 moderate, 613 high, 2 critical)
+  run `npm audit fix` to fix them, or `npm audit` for details
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (code quality)
+[Pipeline] sh
+++ npm bin
++ /var/lib/jenkins/workspace/UAT-Frontend/node_modules/.bin/ng lint
+Linting "angular6-example"...
+
+
+All files pass linting.
+Linting "angular6-example-e2e"...
+
+
+All files pass linting.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (change property file)
+[Pipeline] sh
++ sed -i -e s/192.168.1.217/numberportal-staging.brightlink.com/g /var/lib/jenkins/workspace/UAT-Frontend/src/assets/config/config.production.json
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (build)
+[Pipeline] sh
+++ npm bin
++ /var/lib/jenkins/workspace/UAT-Frontend/node_modules/.bin/ng build --prod --build-optimizer --output-hashing=all
+Browserslist: caniuse-lite is outdated. Please run next command `npm update caniuse-lite browserslist`
+
+Date: 2020-04-21T11:17:28.141Z
+Hash: 889653beabda00837422
+Time: 88792ms
+chunk {0} runtime.7a96aa7ba544d0079442.js (runtime) 2.2 kB [entry] [rendered]
+chunk {1} main.acf7d0459c085b83fee2.js (main) 1.23 MB [initial] [rendered]
+chunk {2} polyfills.dab127238e17a90efd00.js (polyfills) 93.7 kB [initial] [rendered]
+chunk {3} styles.e8c8b568f7a90a03c6b9.css (styles) 148 kB [initial] [rendered]
+chunk {4} 4.5dbe0e61417bcc6f6b4b.js () 3.17 MB  [rendered]
+chunk {5} 5.f005c7df2058b7a4aef5.js () 29.9 kB  [rendered]
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy to temp location)
+[Pipeline] sh
++ ssh wittysupport@204.124.15.239 'rm -rf ~/temp_location/frontend/*'
++ scp -r /var/lib/jenkins/workspace/UAT-Frontend/dist/angular6-example/3rdpartylicenses.txt /var/lib/jenkins/workspace/UAT-Frontend/dist/angular6-example/4.5dbe0e61417bcc6f6b4b.js /var/lib/jenkins/workspace/UAT-Frontend/dist/angular6-example/5.f005c7df2058b7a4aef5.js /var/lib/jenkins/workspace/UAT-Frontend/dist/angular6-example/assets /var/lib/jenkins/workspace/UAT-Frontend/dist/angular6-example/favicon.ico /var/lib/jenkins/workspace/UAT-Frontend/dist/angular6-example/glyphicons-halflings-regular.448c34a56d699c29117a.woff2 /var/lib/jenkins/workspace/UAT-Frontend/dist/angular6-example/glyphicons-halflings-regular.89889688147bd7575d63.svg /var/lib/jenkins/workspace/UAT-Frontend/dist/angular6-example/glyphicons-halflings-regular.e18bbf611f2a2e43afc0.ttf /var/lib/jenkins/workspace/UAT-Frontend/dist/angular6-example/glyphicons-halflings-regular.f4769f9bdb7466be6508.eot /var/lib/jenkins/workspace/UAT-Frontend/dist/angular6-example/glyphicons-halflings-regular.fa2772327f55d8198301.woff /var/lib/jenkins/workspace/UAT-Frontend/dist/angular6-example/index.html /var/lib/jenkins/workspace/UAT-Frontend/dist/angular6-example/main.acf7d0459c085b83fee2.js /var/lib/jenkins/workspace/UAT-Frontend/dist/angular6-example/polyfills.dab127238e17a90efd00.js /var/lib/jenkins/workspace/UAT-Frontend/dist/angular6-example/runtime.7a96aa7ba544d0079442.js /var/lib/jenkins/workspace/UAT-Frontend/dist/angular6-example/sort_both.94b34ff5224ba38210d6.png /var/lib/jenkins/workspace/UAT-Frontend/dist/angular6-example/styles.e8c8b568f7a90a03c6b9.css 'wittysupport@204.124.15.239:~/temp_location/frontend/'
++ ssh wittysupport@204.124.15.239 'chcon -Rt httpd_sys_content_t ~/temp_location/frontend'
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Create backup of current version)
+[Pipeline] sh
++ ssh wittysupport@204.124.15.239 'zip -r "/home/wittysupport/backup/frontend/frontend-$(date +"%Y-%m-%d-%H-%M-%S").zip" /frontend-sidewinder'
+  adding: frontend-sidewinder/ (stored 0%)
+  adding: frontend-sidewinder/3rdpartylicenses.txt (deflated 84%)
+  adding: frontend-sidewinder/4.dd9c19a747942d0940bf.js (deflated 88%)
+  adding: frontend-sidewinder/5.551e609a7fcacf656d8b.js (deflated 84%)
+  adding: frontend-sidewinder/assets/ (stored 0%)
+  adding: frontend-sidewinder/assets/css/ (stored 0%)
+  adding: frontend-sidewinder/assets/css/bootstrap-rtl.css (deflated 86%)
+  adding: frontend-sidewinder/assets/css/sb-admin.css (deflated 55%)
+  adding: frontend-sidewinder/assets/css/plugins/ (stored 0%)
+  adding: frontend-sidewinder/assets/css/plugins/morris.css (deflated 46%)
+  adding: frontend-sidewinder/assets/css/bootstrap-rtl.min.css (deflated 84%)
+  adding: frontend-sidewinder/assets/css/app.css.map (deflated 71%)
+  adding: frontend-sidewinder/assets/css/bootstrap.css (deflated 86%)
+  adding: frontend-sidewinder/assets/css/font-awesome.css (deflated 80%)
+  adding: frontend-sidewinder/assets/css/bootstrap.min.css (deflated 84%)
+  adding: frontend-sidewinder/assets/js/ (stored 0%)
+  adding: frontend-sidewinder/assets/js/bootstrap.js (deflated 79%)
+  adding: frontend-sidewinder/assets/js/bootstrap.min.js (deflated 73%)
+  adding: frontend-sidewinder/assets/js/plugins/ (stored 0%)
+  adding: frontend-sidewinder/assets/js/plugins/morris/ (stored 0%)
+  adding: frontend-sidewinder/assets/js/plugins/morris/morris-data.js (deflated 79%)
+  adding: frontend-sidewinder/assets/js/plugins/morris/morris.js (deflated 80%)
+  adding: frontend-sidewinder/assets/js/plugins/morris/raphael.min.js (deflated 66%)
+  adding: frontend-sidewinder/assets/js/plugins/morris/morris.min.js (deflated 72%)
+  adding: frontend-sidewinder/assets/js/plugins/flot/ (stored 0%)
+  adding: frontend-sidewinder/assets/js/plugins/flot/flot-data.js (deflated 77%)
+  adding: frontend-sidewinder/assets/js/plugins/flot/jquery.flot.pie.js (deflated 70%)
+  adding: frontend-sidewinder/assets/js/plugins/flot/excanvas.min.js (deflated 61%)
+  adding: frontend-sidewinder/assets/js/plugins/flot/jquery.flot.tooltip.min.js (deflated 63%)
+  adding: frontend-sidewinder/assets/js/plugins/flot/jquery.flot.resize.js (deflated 58%)
+  adding: frontend-sidewinder/assets/js/plugins/flot/jquery.flot.js (deflated 78%)
+  adding: frontend-sidewinder/assets/js/jquery.js (deflated 65%)
+  adding: frontend-sidewinder/assets/config/ (stored 0%)
+  adding: frontend-sidewinder/assets/config/config.dev.json (deflated 41%)
+  adding: frontend-sidewinder/assets/config/number.result.json (deflated 17%)
+  adding: frontend-sidewinder/assets/config/config.production.json (deflated 51%)
+  adding: frontend-sidewinder/assets/fonts/ (stored 0%)
+  adding: frontend-sidewinder/assets/fonts/FontAwesome.otf (deflated 18%)
+  adding: frontend-sidewinder/assets/fonts/fontawesome-webfont.ttf (deflated 42%)
+  adding: frontend-sidewinder/assets/fonts/glyphicons-halflings-regular.svg (deflated 75%)
+  adding: frontend-sidewinder/assets/fonts/glyphicons-halflings-regular.woff (deflated 1%)
+  adding: frontend-sidewinder/assets/fonts/glyphicons-halflings-regular.woff2 (deflated 0%)
+  adding: frontend-sidewinder/assets/fonts/fontawesome-webfont.eot (deflated 0%)
+  adding: frontend-sidewinder/assets/fonts/glyphicons-halflings-regular.ttf (deflated 48%)
+  adding: frontend-sidewinder/assets/fonts/glyphicons-halflings-regular.eot (deflated 0%)
+  adding: frontend-sidewinder/assets/fonts/fontawesome-webfont.svg (deflated 70%)
+  adding: frontend-sidewinder/assets/fonts/fontawesome-webfont.woff (deflated 0%)
+  adding: frontend-sidewinder/assets/font-awesome/ (stored 0%)
+  adding: frontend-sidewinder/assets/font-awesome/css/ (stored 0%)
+  adding: frontend-sidewinder/assets/font-awesome/css/font-awesome.min.css (deflated 77%)
+  adding: frontend-sidewinder/assets/font-awesome/css/font-awesome.css (deflated 80%)
+  adding: frontend-sidewinder/assets/font-awesome/fonts/ (stored 0%)
+  adding: frontend-sidewinder/assets/font-awesome/fonts/FontAwesome.otf (deflated 18%)
+  adding: frontend-sidewinder/assets/font-awesome/fonts/fontawesome-webfont.ttf (deflated 41%)
+  adding: frontend-sidewinder/assets/font-awesome/fonts/fontawesome-webfont.woff2 (deflated 0%)
+  adding: frontend-sidewinder/assets/font-awesome/fonts/fontawesome-webfont.eot (deflated 41%)
+  adding: frontend-sidewinder/assets/font-awesome/fonts/fontawesome-webfont.svg (deflated 69%)
+  adding: frontend-sidewinder/assets/font-awesome/fonts/fontawesome-webfont.woff (deflated 0%)
+  adding: frontend-sidewinder/assets/font-awesome/scss/ (stored 0%)
+  adding: frontend-sidewinder/assets/font-awesome/scss/_stacked.scss (deflated 55%)
+  adding: frontend-sidewinder/assets/font-awesome/scss/font-awesome.scss (deflated 48%)
+  adding: frontend-sidewinder/assets/font-awesome/scss/_path.scss (deflated 63%)
+  adding: frontend-sidewinder/assets/font-awesome/scss/_icons.scss (deflated 87%)
+  adding: frontend-sidewinder/assets/font-awesome/scss/_mixins.scss (deflated 59%)
+  adding: frontend-sidewinder/assets/font-awesome/scss/_bordered-pulled.scss (deflated 47%)
+  adding: frontend-sidewinder/assets/font-awesome/scss/_list.scss (deflated 47%)
+  adding: frontend-sidewinder/assets/font-awesome/scss/_variables.scss (deflated 75%)
+  adding: frontend-sidewinder/assets/font-awesome/scss/_rotated-flipped.scss (deflated 66%)
+  adding: frontend-sidewinder/assets/font-awesome/scss/_spinning.scss (deflated 71%)
+  adding: frontend-sidewinder/assets/font-awesome/scss/_core.scss (deflated 38%)
+  adding: frontend-sidewinder/assets/font-awesome/scss/_larger.scss (deflated 52%)
+  adding: frontend-sidewinder/assets/font-awesome/scss/_fixed-width.scss (deflated 20%)
+  adding: frontend-sidewinder/assets/font-awesome/less/ (stored 0%)
+  adding: frontend-sidewinder/assets/font-awesome/less/fixed-width.less (deflated 20%)
+  adding: frontend-sidewinder/assets/font-awesome/less/spinning.less (deflated 71%)
+  adding: frontend-sidewinder/assets/font-awesome/less/stacked.less (deflated 54%)
+  adding: frontend-sidewinder/assets/font-awesome/less/bordered-pulled.less (deflated 46%)
+  adding: frontend-sidewinder/assets/font-awesome/less/font-awesome.less (deflated 54%)
+  adding: frontend-sidewinder/assets/font-awesome/less/rotated-flipped.less (deflated 65%)
+  adding: frontend-sidewinder/assets/font-awesome/less/core.less (deflated 39%)
+  adding: frontend-sidewinder/assets/font-awesome/less/icons.less (deflated 87%)
+  adding: frontend-sidewinder/assets/font-awesome/less/path.less (deflated 63%)
+  adding: frontend-sidewinder/assets/font-awesome/less/variables.less (deflated 75%)
+  adding: frontend-sidewinder/assets/font-awesome/less/larger.less (deflated 52%)
+  adding: frontend-sidewinder/assets/font-awesome/less/mixins.less (deflated 58%)
+  adding: frontend-sidewinder/assets/font-awesome/less/list.less (deflated 46%)
+  adding: frontend-sidewinder/assets/scss/ (stored 0%)
+  adding: frontend-sidewinder/assets/scss/.sass-cache/ (stored 0%)
+  adding: frontend-sidewinder/assets/scss/.sass-cache/a8c7e119cd7cfa48c274231aa7e6e95dc6711984/ (stored 0%)
+  adding: frontend-sidewinder/assets/scss/.sass-cache/a8c7e119cd7cfa48c274231aa7e6e95dc6711984/app.scssc (deflated 83%)
+  adding: frontend-sidewinder/assets/scss/.sass-cache/a8c7e119cd7cfa48c274231aa7e6e95dc6711984/variables.scssc (deflated 68%)
+  adding: frontend-sidewinder/assets/scss/.sass-cache/2d3037dc0984ab531f27de29079a797e146b7f59/ (stored 0%)
+  adding: frontend-sidewinder/assets/scss/.sass-cache/2d3037dc0984ab531f27de29079a797e146b7f59/app.scssc (deflated 83%)
+  adding: frontend-sidewinder/assets/scss/.sass-cache/2d3037dc0984ab531f27de29079a797e146b7f59/variables.scssc (deflated 68%)
+  adding: frontend-sidewinder/assets/scss/variables.scss (deflated 67%)
+  adding: frontend-sidewinder/assets/img/ (stored 0%)
+  adding: frontend-sidewinder/assets/img/Dashboard-Icon-Blue.png (deflated 5%)
+  adding: frontend-sidewinder/assets/img/dummy.jpg (deflated 15%)
+  adding: frontend-sidewinder/assets/img/Voice-API-Manager-Icon.png (deflated 23%)
+  adding: frontend-sidewinder/assets/img/data.png (deflated 19%)
+  adding: frontend-sidewinder/assets/img/Messaging-API-Manager-Icon.png (deflated 24%)
+  adding: frontend-sidewinder/assets/img/API-Command-Center-Icon.png (deflated 18%)
+  adding: frontend-sidewinder/assets/img/sort_both.png (deflated 30%)
+  adding: frontend-sidewinder/assets/img/SIP-API-Manager-Icon.png (deflated 22%)
+  adding: frontend-sidewinder/assets/img/logo-t.PNG (stored 0%)
+  adding: frontend-sidewinder/assets/img/Home-Page-Icon.png (deflated 21%)
+  adding: frontend-sidewinder/assets/img/Dashboard-Icon.png (deflated 18%)
+  adding: frontend-sidewinder/assets/img/logo.png (stored 0%)
+  adding: frontend-sidewinder/assets/img/sidewinder.png (deflated 1%)
+  adding: frontend-sidewinder/assets/img/poweredBybrightlink.png (stored 0%)
+  adding: frontend-sidewinder/assets/img/favicon_spinner_logo.png (deflated 1%)
+  adding: frontend-sidewinder/assets/img/SIP-API-Report-Icon.png (deflated 17%)
+  adding: frontend-sidewinder/assets/img/reporting-icon.png (deflated 10%)
+  adding: frontend-sidewinder/assets/img/Coming-Soon-from-Brightlink2.png (deflated 6%)
+  adding: frontend-sidewinder/favicon.ico (deflated 75%)
+  adding: frontend-sidewinder/glyphicons-halflings-regular.448c34a56d699c29117a.woff2 (deflated 0%)
+  adding: frontend-sidewinder/glyphicons-halflings-regular.89889688147bd7575d63.svg (deflated 75%)
+  adding: frontend-sidewinder/glyphicons-halflings-regular.e18bbf611f2a2e43afc0.ttf (deflated 48%)
+  adding: frontend-sidewinder/glyphicons-halflings-regular.f4769f9bdb7466be6508.eot (deflated 0%)
+  adding: frontend-sidewinder/glyphicons-halflings-regular.fa2772327f55d8198301.woff (deflated 1%)
+  adding: frontend-sidewinder/index.html (deflated 30%)
+  adding: frontend-sidewinder/main.d9382ec49a5272451a3b.js (deflated 76%)
+  adding: frontend-sidewinder/polyfills.dab127238e17a90efd00.js (deflated 66%)
+  adding: frontend-sidewinder/runtime.70287b2c804547a18ae2.js (deflated 50%)
+  adding: frontend-sidewinder/sort_both.94b34ff5224ba38210d6.png (deflated 30%)
+  adding: frontend-sidewinder/styles.c52d9b5f754bce90e7cc.css (deflated 83%)
+  adding: frontend-sidewinder/4.1888cbd25b2097741520.js (deflated 88%)
+  adding: frontend-sidewinder/main.ce0ad8b6256ace82c260.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.aaab08a30368d8ce6e1e.js (deflated 50%)
+  adding: frontend-sidewinder/4.eca7593d065ac02e4d13.js (deflated 88%)
+  adding: frontend-sidewinder/runtime.f5777943a9426681d771.js (deflated 50%)
+  adding: frontend-sidewinder/4.160768ed7cb741698e2f.js (deflated 88%)
+  adding: frontend-sidewinder/runtime.b52dffdc2a7b3b0c65cc.js (deflated 50%)
+  adding: frontend-sidewinder/4.a555c5c3fb080e1537cb.js (deflated 88%)
+  adding: frontend-sidewinder/main.2d49f169bbc3fc215006.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.c1b0208c127e0ebf158b.js (deflated 50%)
+  adding: frontend-sidewinder/4.82d3f3b05462c57cd503.js (deflated 88%)
+  adding: frontend-sidewinder/runtime.94a25d922b18afd10cb3.js (deflated 50%)
+  adding: frontend-sidewinder/4.1df7bc788ae2a70c349a.js (deflated 88%)
+  adding: frontend-sidewinder/runtime.a5042ff297799eaf5a53.js (deflated 50%)
+  adding: frontend-sidewinder/styles.e792ca0c026a542a496d.css (deflated 83%)
+  adding: frontend-sidewinder/4.bf9deddb6eac880ed902.js (deflated 88%)
+  adding: frontend-sidewinder/runtime.9f76cbd7bd3ac896aab2.js (deflated 50%)
+  adding: frontend-sidewinder/4.f503bb3b770416ee79f8.js (deflated 90%)
+  adding: frontend-sidewinder/main.3cbfe6af3a76f17aaad9.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.73540829430fbc113904.js (deflated 50%)
+  adding: frontend-sidewinder/4.6ba602057c4bca2b43e1.js (deflated 90%)
+  adding: frontend-sidewinder/main.724dc1f9524752e78b65.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.f3537ad4a7cc29f38a79.js (deflated 50%)
+  adding: frontend-sidewinder/4.c7f113190778db5b5443.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.0364e656798005a3fe58.js (deflated 50%)
+  adding: frontend-sidewinder/4.d268159c05fb0d67ae68.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.e496eb4b6aa813c87c84.js (deflated 50%)
+  adding: frontend-sidewinder/4.8a142605d903fff28c9b.js (deflated 90%)
+  adding: frontend-sidewinder/5.975d2d4b2392d50a8157.js (deflated 84%)
+  adding: frontend-sidewinder/main.6696af59aeb208873202.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.97aa169d8e261c5474bb.js (deflated 50%)
+  adding: frontend-sidewinder/styles.cf6c0a79519ca728cff9.css (deflated 83%)
+  adding: frontend-sidewinder/main.0a787026d13283c760f8.js (deflated 76%)
+  adding: frontend-sidewinder/5.80fb9827619fff4fa02d.js (deflated 84%)
+  adding: frontend-sidewinder/runtime.4499390adbc2186a5890.js (deflated 50%)
+  adding: frontend-sidewinder/4.413dad71715e63b88bee.js (deflated 90%)
+  adding: frontend-sidewinder/5.ef02975edac48aa08bee.js (deflated 84%)
+  adding: frontend-sidewinder/main.bed6091de5454c8f0113.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.da83ce89840038f7917c.js (deflated 50%)
+  adding: frontend-sidewinder/4.32968221031ba2415e2f.js (deflated 90%)
+  adding: frontend-sidewinder/5.c255f9ff4b042355496b.js (deflated 84%)
+  adding: frontend-sidewinder/runtime.2247870f127a7e4df9d6.js (deflated 50%)
+  adding: frontend-sidewinder/4.860e19d14430e1fb71e0.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.4d6a92940b9057acaab7.js (deflated 50%)
+  adding: frontend-sidewinder/4.aa6c3e2eaa5e63e76ee6.js (deflated 90%)
+  adding: frontend-sidewinder/5.f32f54a1130a1e09be98.js (deflated 84%)
+  adding: frontend-sidewinder/main.c0d2055b97a152bc6ce6.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.8aaccc32999076112c65.js (deflated 50%)
+  adding: frontend-sidewinder/styles.40003d1145ab401baa0f.css (deflated 83%)
+  adding: frontend-sidewinder/main.306b71bc839eb80ca87f.js (deflated 76%)
+  adding: frontend-sidewinder/4.cbec1b2208fe92b803d7.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.cdb76855c20e77f00079.js (deflated 50%)
+  adding: frontend-sidewinder/4.b8fdc1b8ac0dd9163f77.js (deflated 90%)
+  adding: frontend-sidewinder/main.727259f59a198ec0b475.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.070ff827f8cb165cb45d.js (deflated 50%)
+  adding: frontend-sidewinder/4.2dd293f1375d864b2c4d.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.b7478d2309c1bfb4fcb3.js (deflated 50%)
+  adding: frontend-sidewinder/styles.a95c46cb1f634cacdb8d.css (deflated 83%)
+  adding: frontend-sidewinder/4.77361fcff9086d2f8d5b.js (deflated 90%)
+  adding: frontend-sidewinder/main.c7a1cc478e5cfd8cba11.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.15d3a5d3e810f184c925.js (deflated 50%)
+  adding: frontend-sidewinder/4.8098352a082011e6ca4e.js (deflated 90%)
+  adding: frontend-sidewinder/5.b0f75dcf2b4541ef27f2.js (deflated 84%)
+  adding: frontend-sidewinder/runtime.eb06d7c690a6bca25e4a.js (deflated 50%)
+  adding: frontend-sidewinder/4.b8bb796601d15cf1a45d.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.cebe137935a1ef07922e.js (deflated 50%)
+  adding: frontend-sidewinder/4.ba9c59c2ecd4da8f179d.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.d4929a7c934313d38b26.js (deflated 50%)
+  adding: frontend-sidewinder/4.5822b904b96ce2e1216f.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.38c8d5435c6e9891d672.js (deflated 50%)
+  adding: frontend-sidewinder/4.ba2f6bfc6b6953b9658b.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.d3bae7abaebac7704d38.js (deflated 50%)
+  adding: frontend-sidewinder/4.6530ac8e35a04cec5072.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.3a7ad36216e76749ac31.js (deflated 50%)
+  adding: frontend-sidewinder/4.e003f47d1b2587e3cd90.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.7d5af2746f538317cb3a.js (deflated 50%)
+  adding: frontend-sidewinder/4.a05cd6291e8dc6b02c70.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.5f46ff0b7191ea9ffba2.js (deflated 50%)
+  adding: frontend-sidewinder/5.1308112799091765022f.js (deflated 84%)
+  adding: frontend-sidewinder/runtime.03410b6b111e90f044ec.js (deflated 50%)
+  adding: frontend-sidewinder/4.84bdc7959e124de22192.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.ba01e5460e87d2dd1b58.js (deflated 50%)
+  adding: frontend-sidewinder/4.3317a9bc049830a9fdcf.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.7963e2af6e2a5ed6d7c1.js (deflated 50%)
+  adding: frontend-sidewinder/4.625df7abab772d5884f0.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.ad126f34da1f1dc7f39b.js (deflated 50%)
+  adding: frontend-sidewinder/4.b9bca1d7d76fd9f48a47.js (deflated 90%)
+  adding: frontend-sidewinder/main.06d6682ba5a64a0589c8.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.10ba5123833171618a89.js (deflated 50%)
+  adding: frontend-sidewinder/4.db4a8a5bea449273dff7.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.545950e7e8a1378a7088.js (deflated 50%)
+  adding: frontend-sidewinder/4.8bfd66564be04613e50d.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.7255cd9d7a857b859829.js (deflated 50%)
+  adding: frontend-sidewinder/4.40c7be98f65ff668f3ac.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.1dd6153f1e760c448750.js (deflated 50%)
+  adding: frontend-sidewinder/4.d32014b25cfba4d4bb52.js (deflated 90%)
+  adding: frontend-sidewinder/runtime.7ac48d6da45169a5d806.js (deflated 50%)
+  adding: frontend-sidewinder/4.ff36d5bb39c1134c3171.js (deflated 89%)
+  adding: frontend-sidewinder/main.03c07deef2f4d806530b.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.0a01fc6982b48fc39b63.js (deflated 50%)
+  adding: frontend-sidewinder/styles.7049b0a6224db1aa0291.css (deflated 83%)
+  adding: frontend-sidewinder/4.52304e8171f6a6b5bca0.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.76e726ef2e33866438d1.js (deflated 50%)
+  adding: frontend-sidewinder/4.068c011219ae81a1e6da.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.df8362a9ff0cba2dbb6a.js (deflated 50%)
+  adding: frontend-sidewinder/4.020a3c85353a0434d530.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.283b23d9114d087bb645.js (deflated 50%)
+  adding: frontend-sidewinder/4.fb75859c06d974486aa0.js (deflated 89%)
+  adding: frontend-sidewinder/main.b1a4e0d30842791c2ce3.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.de2db82fd56a3c7ca013.js (deflated 50%)
+  adding: frontend-sidewinder/4.6a602a3bc9c275d835b0.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.f4a74c07f07096d733dd.js (deflated 50%)
+  adding: frontend-sidewinder/4.ebd4016054901279c919.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.502f765b4a99bff60473.js (deflated 50%)
+  adding: frontend-sidewinder/4.d828f06a6c6c14779a7b.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.2446f0c8999d2cf83cae.js (deflated 50%)
+  adding: frontend-sidewinder/4.c82b40dba714fc60b05b.js (deflated 89%)
+  adding: frontend-sidewinder/main.81d944a121f0fe330932.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.b78f70d87e87b5f80169.js (deflated 50%)
+  adding: frontend-sidewinder/4.54742835d501689caf93.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.e23a8c7f356cb4a7670a.js (deflated 50%)
+  adding: frontend-sidewinder/4.fe39bd0d95eeafccdaa0.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.e398a958241db79a201c.js (deflated 50%)
+  adding: frontend-sidewinder/4.fbaca18c4126e57e0f6c.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.0615e7736a8824c4f38b.js (deflated 50%)
+  adding: frontend-sidewinder/4.1d8375bd45e0e7aaad78.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.c01cbeed99b47fe43449.js (deflated 50%)
+  adding: frontend-sidewinder/4.ac2bf4b558b8eeaa1043.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.ae279c4f0d8b83b07ff4.js (deflated 50%)
+  adding: frontend-sidewinder/4.48612d2922ae4378044e.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.bbe832f6e6d1471eb4c3.js (deflated 50%)
+  adding: frontend-sidewinder/4.160de29a0b373826f930.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.af978dd64a0ff92695bd.js (deflated 50%)
+  adding: frontend-sidewinder/4.4fd3392fa17e7695eeb1.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.a37e61eacb0f087b5cac.js (deflated 50%)
+  adding: frontend-sidewinder/4.65cc0b45c4904f784d6d.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.84c4e286ee28701e3180.js (deflated 50%)
+  adding: frontend-sidewinder/4.458be62936db843a64bb.js (deflated 89%)
+  adding: frontend-sidewinder/main.27382f0409c194ea04b1.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.934ccbb583ac8e3fa1dd.js (deflated 50%)
+  adding: frontend-sidewinder/4.8e73e21f4240577374fd.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.8aac967c60542e553560.js (deflated 50%)
+  adding: frontend-sidewinder/main.808b9c0b15410c875c4a.js (deflated 76%)
+  adding: frontend-sidewinder/main.66e028ffd79ad226dcf1.js (deflated 76%)
+  adding: frontend-sidewinder/main.80a23703ed38a62f7ac3.js (deflated 76%)
+  adding: frontend-sidewinder/4.4bc3f8d6b4b38320c7eb.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.567b8c0d1f97469ad3d8.js (deflated 50%)
+  adding: frontend-sidewinder/4.cd70b0b634ae211dbe01.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.1f749ed96c94e990c5b4.js (deflated 50%)
+  adding: frontend-sidewinder/4.34796306fd0ddaa9fe32.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.c896433e8e7d709fae81.js (deflated 50%)
+  adding: frontend-sidewinder/4.1fd8b49a2b20aefcc190.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.239148696af13d1f077d.js (deflated 50%)
+  adding: frontend-sidewinder/main.5ec897b1832da8c62744.js (deflated 76%)
+  adding: frontend-sidewinder/4.214acb8df143f14926ea.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.d77fa713d06a65a6f7dc.js (deflated 50%)
+  adding: frontend-sidewinder/styles.e8c8b568f7a90a03c6b9.css (deflated 83%)
+  adding: frontend-sidewinder/main.08ae075b64548951bfd1.js (deflated 76%)
+  adding: frontend-sidewinder/main.f13cc40690ec5109aead.js (deflated 76%)
+  adding: frontend-sidewinder/4.008703c9e87be991f734.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.24250b10293030a98d0b.js (deflated 50%)
+  adding: frontend-sidewinder/4.4e3ae6e3cc9b96345f80.js (deflated 89%)
+  adding: frontend-sidewinder/main.a25953e0aefb9641af77.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.d376e40471645990a268.js (deflated 50%)
+  adding: frontend-sidewinder/4.4cc1251c43afb47f9a75.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.c20283d8f514c2d7f080.js (deflated 50%)
+  adding: frontend-sidewinder/4.83f027be4511a573cc51.js (deflated 89%)
+  adding: frontend-sidewinder/main.e434554e722e481cd4b0.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.0488d3b39be8fc4300db.js (deflated 50%)
+  adding: frontend-sidewinder/4.d6daa2bdc870da092bf8.js (deflated 89%)
+  adding: frontend-sidewinder/5.8cb661cbebdbc673381a.js (deflated 84%)
+  adding: frontend-sidewinder/main.72ee1b6ee474e8ee3f51.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.953b08ad875fc56da93c.js (deflated 50%)
+  adding: frontend-sidewinder/4.e8ea5a080f9517858c9b.js (deflated 89%)
+  adding: frontend-sidewinder/main.de0f69d2c3405f77e045.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.f56688e69efdba3c6b09.js (deflated 50%)
+  adding: frontend-sidewinder/4.0aa0711c4c9caf9b89fb.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.65834217ceb705ac41eb.js (deflated 50%)
+  adding: frontend-sidewinder/4.0934361227b705993567.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.bb25d909fa00a5a08f41.js (deflated 50%)
+  adding: frontend-sidewinder/4.6dd099b378e57db52dd2.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.836c9ed1699e8e99d4f4.js (deflated 50%)
+  adding: frontend-sidewinder/4.67f6ee5e8f89a5d50fcc.js (deflated 89%)
+  adding: frontend-sidewinder/main.4c405fcf44c588b8f720.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.1b64590b0b4139e04a07.js (deflated 50%)
+  adding: frontend-sidewinder/4.ca02930d2424a60746f0.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.61ba8871428cc2b78ad8.js (deflated 50%)
+  adding: frontend-sidewinder/4.21257f2f76b5c041d1fc.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.d5c8fe5c4e6441e7fe7b.js (deflated 50%)
+  adding: frontend-sidewinder/4.e0af21e76caf1e1e10e3.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.bcce9b8887d86cd0ee4c.js (deflated 50%)
+  adding: frontend-sidewinder/4.29a92331b8b5a9ae0c3a.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.fd85ba8658b21934d3a7.js (deflated 50%)
+  adding: frontend-sidewinder/4.5e53d11320d440a0c2f7.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.bcaa66f3477d115816c5.js (deflated 50%)
+  adding: frontend-sidewinder/4.3c801331d63e71ea4df4.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.5967c1bf859089d70a56.js (deflated 50%)
+  adding: frontend-sidewinder/4.d3703d92aba04475d345.js (deflated 89%)
+  adding: frontend-sidewinder/main.c0d532e820e54ed35b4c.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.5004906f9d1882543611.js (deflated 50%)
+  adding: frontend-sidewinder/4.1a342421bc79f151b4e2.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.99c1c159ff7ff96069d0.js (deflated 50%)
+  adding: frontend-sidewinder/4.b4fb9b3f6c3f31a920c0.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.d04cfb29a408f5f5f7c9.js (deflated 50%)
+  adding: frontend-sidewinder/4.2fa706b50500b1c7cee2.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.c022031e926618fdaddf.js (deflated 50%)
+  adding: frontend-sidewinder/4.bdbb65ecbc5d771ed966.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.ec2712e68eb0d25e4c33.js (deflated 50%)
+  adding: frontend-sidewinder/4.1d370c3300ec451b371a.js (deflated 89%)
+  adding: frontend-sidewinder/main.5ba1979f5568c0f45fa2.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.a60f8f99998127515133.js (deflated 50%)
+  adding: frontend-sidewinder/4.cdb832e204b76e9950af.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.7e0a350ccc63db9ad293.js (deflated 50%)
+  adding: frontend-sidewinder/4.4a5eaccde2b24d980013.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.9cdc14ad7adc4082a60b.js (deflated 50%)
+  adding: frontend-sidewinder/4.c146c8e10af6af2b4b68.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.b0f71980bb29d3c69417.js (deflated 50%)
+  adding: frontend-sidewinder/4.4f6f9a99ed5c2970735f.js (deflated 89%)
+  adding: frontend-sidewinder/main.91e518bb0a332c1af343.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.0f128a9bf421948f69ce.js (deflated 50%)
+  adding: frontend-sidewinder/4.ae06f92ca80d21b807e1.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.6fc122907396385447e5.js (deflated 50%)
+  adding: frontend-sidewinder/4.479535db06a63b24f54d.js (deflated 89%)
+  adding: frontend-sidewinder/main.721f76204552b016eb00.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.a0ba2b20b9e9f8abf883.js (deflated 50%)
+  adding: frontend-sidewinder/4.c74e829723a1d94e009d.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.3486b6971dfb29e9da8d.js (deflated 50%)
+  adding: frontend-sidewinder/4.5abf582928927b51cbff.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.3fe66a4a51293454d2dc.js (deflated 50%)
+  adding: frontend-sidewinder/4.67617fd089346f5f96d9.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.c37befddee582e7392f5.js (deflated 50%)
+  adding: frontend-sidewinder/4.1e8dea249ab1ad157d40.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.f4bccd0d8eaaf079fdfa.js (deflated 50%)
+  adding: frontend-sidewinder/4.3e558292fbccdda9d278.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.f5bd5d17302562a69b7f.js (deflated 50%)
+  adding: frontend-sidewinder/4.ae1d4c68e09504e0739e.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.2420241c6094a255fea6.js (deflated 50%)
+  adding: frontend-sidewinder/4.1be567c583c654f6b50f.js (deflated 89%)
+  adding: frontend-sidewinder/main.b6bc222130f31bbdbb4e.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.0a77cadf98e0b7b0ab36.js (deflated 50%)
+  adding: frontend-sidewinder/4.650f76ba9cd9cd0c5afa.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.f27c71508826dc763210.js (deflated 50%)
+  adding: frontend-sidewinder/4.459074835648e0eaf3e2.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.06008cfaacce61c59642.js (deflated 50%)
+  adding: frontend-sidewinder/4.f260b2e12e21064ecea8.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.f477d500bb3300864382.js (deflated 50%)
+  adding: frontend-sidewinder/4.6345b13a361f0bc36b6d.js (deflated 89%)
+  adding: frontend-sidewinder/main.2b7024942e51deabbc94.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.14752a3321173b49abe2.js (deflated 50%)
+  adding: frontend-sidewinder/4.dee7dded7cb8b3791bc3.js (deflated 89%)
+  adding: frontend-sidewinder/main.15560872384cc6c4f0d1.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.ef3801456dda352e19a1.js (deflated 50%)
+  adding: frontend-sidewinder/4.86ebccfd3a13c7490e0a.js (deflated 89%)
+  adding: frontend-sidewinder/main.9f40e7ca83db6dfccd51.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.56cb633546a963cf6aec.js (deflated 50%)
+  adding: frontend-sidewinder/4.9db72cbd574d5865fb43.js (deflated 89%)
+  adding: frontend-sidewinder/main.e1a9f3930e6cf3ffb317.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.627c88fccda0227a5691.js (deflated 50%)
+  adding: frontend-sidewinder/4.95a089c44a2892e6961c.js (deflated 89%)
+  adding: frontend-sidewinder/main.4245e085c03e76015aa2.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.a3e7f3ab4b70662ef7ca.js (deflated 50%)
+  adding: frontend-sidewinder/4.bcbb2ea82ef335e3e17f.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.32411da627c0fa9bc034.js (deflated 50%)
+  adding: frontend-sidewinder/4.e45961abc2cfdc57b946.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.386184ed1f0b8e7246bd.js (deflated 50%)
+  adding: frontend-sidewinder/4.e55cf00fb350ad96a527.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.b32e2588bf7bb1d11584.js (deflated 50%)
+  adding: frontend-sidewinder/4.58bdd33a954d0ae01878.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.0e4d7a47a76e5f77045e.js (deflated 50%)
+  adding: frontend-sidewinder/4.b9ca864f88058d407f40.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.bbf131e8fbd296cf0f0f.js (deflated 50%)
+  adding: frontend-sidewinder/4.17de613eb20cf092f649.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.26b665485943012112ae.js (deflated 50%)
+  adding: frontend-sidewinder/4.273d60bf1a27f893eed2.js (deflated 89%)
+  adding: frontend-sidewinder/main.33a7143c6a5fa62b579e.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.8eb427b3a1f33f927cd3.js (deflated 50%)
+  adding: frontend-sidewinder/4.f9a8d5470dd6ce49ce29.js (deflated 89%)
+  adding: frontend-sidewinder/5.f1cddfcb957dc3d09c14.js (deflated 84%)
+  adding: frontend-sidewinder/runtime.62acdfcf24554a6ddd40.js (deflated 50%)
+  adding: frontend-sidewinder/4.1003b16fb278eda46276.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.8d0f65971727347d6957.js (deflated 50%)
+  adding: frontend-sidewinder/4.81043febda881a4ec8c8.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.465c6e48aba95374f77e.js (deflated 50%)
+  adding: frontend-sidewinder/4.d6afa2e1a50c9811aab8.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.0904ce46b30ea666b68d.js (deflated 50%)
+  adding: frontend-sidewinder/4.f301440425bb779839d6.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.2fb6804cfea88f3cf712.js (deflated 50%)
+  adding: frontend-sidewinder/4.5ed8f9c84c1fc25f342b.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.5cf17c863b74a6b4b8c9.js (deflated 50%)
+  adding: frontend-sidewinder/4.0b7af05a16a6f215cf2b.js (deflated 89%)
+  adding: frontend-sidewinder/5.f005c7df2058b7a4aef5.js (deflated 84%)
+  adding: frontend-sidewinder/main.b663f142e80fd9e8c140.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.0fe1362d01893878a050.js (deflated 50%)
+  adding: frontend-sidewinder/4.070b1e1ffe9f65dac874.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.df6692201a46916ad843.js (deflated 50%)
+  adding: frontend-sidewinder/4.eb6c7672ab29e8673472.js (deflated 89%)
+  adding: frontend-sidewinder/main.da6b015c048f007d1561.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.5ffed576879792cdb3a1.js (deflated 50%)
+  adding: frontend-sidewinder/4.9154545dcec40988caaf.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.0e275bccac21b21a4211.js (deflated 50%)
+  adding: frontend-sidewinder/4.fbfb1aec3f2ad9f6afab.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.4b0dd8232842d9bb7825.js (deflated 50%)
+  adding: frontend-sidewinder/4.3783b20ac3df4f6d48e9.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.ba5b805fe666df416563.js (deflated 50%)
+  adding: frontend-sidewinder/4.2408262e21430e24d5cb.js (deflated 89%)
+  adding: frontend-sidewinder/main.7f9b9157828f9a22a350.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.1f8a05f5e7146b83c312.js (deflated 50%)
+  adding: frontend-sidewinder/4.f39a639a8a790d6591ab.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.aecc9ce7b25e5e2de72e.js (deflated 50%)
+  adding: frontend-sidewinder/4.11974372562aa2512c07.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.e63cc7529605f2ff27be.js (deflated 50%)
+  adding: frontend-sidewinder/4.4008fd3eb1959f9869be.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.56c6cf6219d8caa30f0c.js (deflated 50%)
+  adding: frontend-sidewinder/4.5e28d317073b68b90ede.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.bf5557fe1bd2809ea4d6.js (deflated 50%)
+  adding: frontend-sidewinder/4.bbbe22de202ef2fb8bfe.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.fc0a20308bf9b5005fb1.js (deflated 50%)
+  adding: frontend-sidewinder/4.afd16da89329589d94af.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.cc207f871412b3773ab2.js (deflated 50%)
+  adding: frontend-sidewinder/4.d7930a90599e0ec6d123.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.3a3c3525425624bdd581.js (deflated 50%)
+  adding: frontend-sidewinder/4.3bc1f208cc8d396af347.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.f60d86cb812a6099f8ae.js (deflated 50%)
+  adding: frontend-sidewinder/4.752b0f8b07d4bc1ed4f2.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.c9245c2a5b3dd246d166.js (deflated 50%)
+  adding: frontend-sidewinder/4.7584d7b984a0dfe7793a.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.bdd2d96a7b7ea7efcf6f.js (deflated 50%)
+  adding: frontend-sidewinder/4.77d39ef39cdf3f61a63c.js (deflated 89%)
+  adding: frontend-sidewinder/main.c20186bef60854a80212.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.ef37196b196ae0ec3937.js (deflated 50%)
+  adding: frontend-sidewinder/4.b058b2035bc112846b8a.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.0ded0b27aebc3baf15b2.js (deflated 50%)
+  adding: frontend-sidewinder/4.45265023ccde9683b9ef.js (deflated 89%)
+  adding: frontend-sidewinder/main.7aa27c99dcdcd470f5d3.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.9009c9a529050ce6b385.js (deflated 50%)
+  adding: frontend-sidewinder/4.4ef834183660aed753e4.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.223ac7d641f58b328e74.js (deflated 50%)
+  adding: frontend-sidewinder/4.cb56ad97a3a4eac6e6be.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.0c353654aa6321dcb22e.js (deflated 50%)
+  adding: frontend-sidewinder/4.a0648ac2b85c3361de6f.js (deflated 89%)
+  adding: frontend-sidewinder/main.56ec4f2bb8995cac91c2.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.a6ac47c01f9ea231536f.js (deflated 50%)
+  adding: frontend-sidewinder/4.af3d6b5ecec76c9c7af1.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.23601a4eb7c657c9ba87.js (deflated 50%)
+  adding: frontend-sidewinder/4.b2d4d439d7234640a2b3.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.f6a5e256d52d0ddc0953.js (deflated 50%)
+  adding: frontend-sidewinder/4.2d492be7e9a748695115.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.b162561a65feac61eecb.js (deflated 50%)
+  adding: frontend-sidewinder/4.ef4926f0e63371d167e9.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.020beda826c497230930.js (deflated 50%)
+  adding: frontend-sidewinder/4.0af6b6c1b6198103191c.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.f34f0d648adf6df52b94.js (deflated 50%)
+  adding: frontend-sidewinder/4.de91268cbce96c5af99b.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.73c9d03d8fa4873b4273.js (deflated 50%)
+  adding: frontend-sidewinder/4.55e58405cfbf3932a376.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.dea943179c4cdf1e4aa1.js (deflated 50%)
+  adding: frontend-sidewinder/4.aff86d026c61b7767595.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.18b45cd47428d77ce8fa.js (deflated 50%)
+  adding: frontend-sidewinder/4.35a8cccc3f3905786e16.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.eaa9a145e264ae0d57b5.js (deflated 50%)
+  adding: frontend-sidewinder/4.a59a3b32478082a2c70c.js (deflated 89%)
+  adding: frontend-sidewinder/runtime.72565250cc1dcda36a2d.js (deflated 50%)
+  adding: frontend-sidewinder/4.04e2b316142d6ad91ab5.js (deflated 89%)
+  adding: frontend-sidewinder/main.df36df4ecca4fe81229a.js (deflated 76%)
+  adding: frontend-sidewinder/runtime.281282aa033cb470e75d.js (deflated 50%)
++ ssh wittysupport@204.124.15.239 'rm -f $(ls -1t /home/wittysupport/backup/frontend/ | tail -n +4)'
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy)
+[Pipeline] sh
++ ssh wittysupport@204.124.15.239 'cp -r ~/temp_location/frontend/* /frontend-sidewinder/'
++ ssh wittysupport@204.124.15.239 'chcon -Rt httpd_sys_content_t /frontend-sidewinder'
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
