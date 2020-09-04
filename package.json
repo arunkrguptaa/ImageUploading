@@ -18,7 +18,7 @@
     "babel-preset-react": "6.24.1",
     "css-loader": "^0.28.11",
     "live-server": "^1.2.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.13.1",
     "normalize.css": "^8.0.0",
     "react": "16.0.0",
     "react-dom": "16.0.0",
